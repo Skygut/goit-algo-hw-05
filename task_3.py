@@ -5,7 +5,7 @@ from rabin_karp_search import rabin_karp_search
 
 
 def main():
-    with open("./article_1.txt", "r") as fh:
+    with open("./text_1.txt", "r") as fh:
         article_1 = "".join(fh.readlines())
         existent_pattern = "порівнюється із середнім"
         non_existent_pattern = "юєсятьпорівн ім ізсередн"
@@ -30,7 +30,7 @@ def main():
             lambda: rabin_karp_search(article_1, non_existent_pattern), number=10
         )
 
-    with open("./article_2.txt", "r") as fh:
+    with open("./text_2.txt", "r") as fh:
         article_2 = "".join(fh.readlines())
         existent_pattern = "традиційних представленнях структур"
         non_existent_pattern = "традпредставлкту реннях сиційнихтру"
