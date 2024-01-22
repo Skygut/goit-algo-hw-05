@@ -42,7 +42,6 @@ class HashTable:
 
 
 def main():
-    # Тестуємо нашу хеш-таблицю:
     H = HashTable(5)
     H.insert("apple", 10)
     H.insert("orange", 20)

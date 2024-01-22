@@ -8,7 +8,7 @@ def main():
     with open("./text_1.txt", "r") as fh:
         article_1 = "".join(fh.readlines())
         existent_pattern = "порівнюється із середнім"
-        non_existent_pattern = "юєсятьпорівн ім ізсередн"
+        non_existent_pattern = "тамістуоді про гр слід"
 
         kmp_search_article_1_existent = timeit(
             lambda: kmp_search(article_1, existent_pattern), number=10
@@ -33,7 +33,7 @@ def main():
     with open("./text_2.txt", "r") as fh:
         article_2 = "".join(fh.readlines())
         existent_pattern = "традиційних представленнях структур"
-        non_existent_pattern = "традпредставлкту реннях сиційнихтру"
+        non_existent_pattern = "значні ричиняє затрихтру"
 
         kmp_search_article_2_existent = timeit(
             lambda: kmp_search(article_2, existent_pattern), number=10
