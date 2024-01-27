@@ -3,6 +3,7 @@ def binary_search(arr, x):
     high = len(arr) - 1
     mid = 0
     iterations = 0
+    closest_index = None
 
     while low <= high:
         mid = (high + low) // 2
@@ -10,27 +11,25 @@ def binary_search(arr, x):
 
         if arr[mid] < x:
             low = mid + 1
-
-        elif arr[mid] > x:
+        else:
+            closest_index = mid
             high = mid - 1
 
-        else:
-            return iterations, mid
-
-    default = -1 if low >= len(arr) else low
-
-    return iterations, default
+    if closest_index is not None:
+        return iterations, arr[closest_index]
+    else:
+        return iterations, None
 
 
 def main():
     arr = [1.2, 1.3, 2.42, 3.11, 4.4, 4.51, 7.8, 11.2]
-    x = 12
+    x = 13
     result = binary_search(arr, x)
     print(f"Iterations: {result[0]}")
-    print(f"Index: {result[1]}")
+    print(f"Value: {result[1]}")
 
-    if result[1] != -1:
-        print(f"Value: {arr[result[1]]}")
+    if result[1] is not None:
+        print("Element found in array")
     else:
         print("Element is not present in array")
 
