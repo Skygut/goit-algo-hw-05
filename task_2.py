@@ -18,7 +18,7 @@ def binary_search(arr, x):
     if closest_index is not None:
         return iterations, arr[closest_index]
     else:
-        return iterations, None
+        return iterations, "not found"
 
 
 def main():
